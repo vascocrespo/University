@@ -1,0 +1,53 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 3;
+	padding: 0;
+	text-decoration: none;
+	line-height: 1.8;
+	
+}
+
+body {
+    background-color: rgb(210, 213, 213);
+}
+
+
+#rest {
+	position: fixed;
+	left: 200px;
+	top: 205px;
+}
+
+#rest2 {
+	position: fixed;
+	left: 290px;
+	top: 240px;
+}
+
+#mapid { 
+		height: 500px;
+		width: 900px;
+		position: absolute;
+		left: 600px;
+		top: 135px;	
+}
+
+#login {
+	position: fixed;
+	left: 270px;
+	top: 270px;
+}
+
+#id {
+	position:fixed;
+    right:10px;
+    top:-20px;		
+}
+
+.logout{
+
+    position:fixed;
+    right:10px;
+    top:30px;
+}

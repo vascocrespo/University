@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista de registos efetuados</title>
+	<link th:href = "@{/css/getMyRegistos.css}" rel="stylesheet">
+</head>
+<body>
+	<h1 align="center">Os Meus Registos</h1>
+	<br>
+	<table align="center">
+		<tr>
+			<th>Loja</th>
+			<th>Ocupacao</th>
+		</tr>
+			<tr th:each="ocupation : ${ocupations}">
+					<td th:text="${ocupation.store}">loja</td>
+					<td th:text="${ocupation.lotacao}">lotacao</td>
+			</tr>
+	</table>
+	<h3 id="id" th:text="${username}"></h3>
+	<a id="login" href="/menu" >Voltar ao menu</a>
+	<form method="post" th:action="@{/logout}">
+		<button class="logout" type="submit">logout</button>
+	</form>
+
+</body>
+</html>

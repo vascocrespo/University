@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link th:href = "@{/css/gray.css}" rel="stylesheet">
+
+<title>Loja Perto de Si</title>
+</head>
+<body>
+	<div align="center">
+		<form action="#" th:action="@{/nearStore}" th:object="${location}" method="post">
+			<label>Latitude:  </label>
+			<input type="number" step="0.000001" th:field="*{latitude}"/><br/>
+			<label>Longitude:</label>
+			<input type="number" step="0.000001" th:field="*{longitude}"/><br/>
+			<button type="submit">Submit</button>
+		</form>
+		<h3 id="id" th:text="${username}"></h3>
+		<a href="/menu" >Voltar ao menu</a>
+		<form method="post" th:action="@{/logout}">
+			<button class="logout" type="submit">logout</button>
+		</form>
+	</div>
+</body>
+</html>

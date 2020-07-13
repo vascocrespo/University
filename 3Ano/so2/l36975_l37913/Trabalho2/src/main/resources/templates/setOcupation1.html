@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link th:href = "@{/css/setRegistos.css}" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+
+
+<title>Registo de uma ocupacao</title>
+</head>
+<body>
+	<h1 align="center">Registe uma ocupacao</h1>
+	<div id="mapid">
+		
+		<script>
+			const mymap = L.map('mapid').setView([38.5666700,-7.9000000], 14);
+		
+			const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+			
+			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+			const tiles = L.tileLayer(tileUrl, { attribution });
+			tiles.addTo(mymap);			
+		
+			var marker1 = L.marker([38.574040, -7.899631]).addTo(mymap); //pingo doce alamos
+			var marker2 = L.marker([38.560451, -7.914022]).addTo(mymap); //pingo doce horta das figueiras
+			var marker3 = L.marker([38.569408, -7.921524]).addTo(mymap); // pingo doce rodoviaria
+			var marker4 = L.marker([38.558892, -7.913339]).addTo(mymap); // lidl
+			var marker5 = L.marker([38.557966, -7.922625]).addTo(mymap); // continente
+			var marker6 = L.marker([38.581388, -7.902902]).addTo(mymap); // minipreco
+			marker1.bindPopup("Pingo Doce Alamos").openPopup();
+			marker2.bindPopup("Pingo Doce Horta das Figueiras").openPopup();
+			marker3.bindPopup("Pingo Doce Rodoviaria").openPopup();
+			marker4.bindPopup("Lidl").openPopup();
+			marker5.bindPopup("Continente").openPopup();
+			marker6.bindPopup("Minipreco").openPopup();
+			
+		</script>		
+		
+	</div>
+	<div id="rest">
+		<form action="#" th:action="@{/setOcupation}" th:object="${ocupation}" method="post">
+			<label>Nome da Loja: </label>
+			<input type="text" th:field="*{store}"/><br/>
+			<label>Ocupacao:</label>
+			<input type="number" min="1" max="4" th:field="*{lotacao}"/><br/>
+			<button id="rest2" type="submit">Submit</button>
+		</form>
+		<h3 id="id" th:text="${username}"></h3>
+		<a id="login" href="/menu" >Voltar ao menu</a>
+		<form method="post" th:action="@{/logout}">
+			<button class="logout" type="submit">logout</button>
+		</form>
+	</div>
+</body>
+</html>

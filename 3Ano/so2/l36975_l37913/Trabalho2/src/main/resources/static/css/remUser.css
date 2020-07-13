@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 3;
+	padding: 0;
+	text-decoration: none;
+	line-height: 1.8;
+}
+
+body {
+    background-color: rgb(210, 213, 213);
+}
+
+td {
+	text-align:center; 
+}
+
+#rest {
+	position: fixed;
+	left: 650px;
+	top: 225px;
+}
+
+#rest2 {
+	position: fixed;
+	left: 780px;
+	top: 265px;
+}
+
+
+#ocupacao {
+	position: fixed;
+	left: 760px;
+}
+
+#login {
+	position: fixed;
+	left: 750px;
+	top: 300px;
+}
+
+
+#id {
+	position:fixed;
+    right:10px;
+    top:-20px;		
+}
+
+.logout{
+
+    position:fixed;
+    right:10px;
+    top:30px;
+}

@@ -1,0 +1,155 @@
+--tables
+
+DROP TABLE IF EXISTS cliente CASCADE;
+DROP TABLE IF EXISTS jogo CASCADE;
+DROP TABLE IF EXISTS loja CASCADE;
+DROP TABLE IF EXISTS fornecedor CASCADE;
+DROP TABLE IF EXISTS quer_jogo CASCADE;
+DROP TABLE IF EXISTS fornece CASCADE;
+DROP TABLE IF EXISTS cliente_paga CASCADE;
+DROP TABLE IF EXISTS loja_paga CASCADE;
+DROP TABLE IF EXISTS loja_estar CASCADE;
+
+create table cliente(
+user_id integer primary key,
+username varchar(25),
+password varchar(12),
+telemovel integer,
+cartao_credito varchar(16)
+);
+
+create table fornecedor(
+id_fornecedor varchar(20) primary key,
+cc_fornecedor varchar(16),
+nome_fornecedor varchar(15));
+
+create table jogo(
+id_jogo varchar(20) primary key,
+nome_jogo char(20),
+valor_jogo numeric check(valor_jogo > 0),
+id_fornecedor varchar(20),
+foreign key (id_fornecedor) references fornecedor
+);
+
+create table loja(
+id_pagamento varchar(20) primary key,
+valor_pagamento numeric check(valor_pagamento > 0),
+data_pagamento date,
+user_id integer,
+id_jogo varchar(20),
+foreign key (id_jogo) references jogo,
+foreign key (user_id) references cliente);
+
+create table quer_jogo(
+user_id integer,
+id_jogo varchar(20),
+foreign key (user_id) references cliente(user_id),
+foreign key(id_jogo) references jogo(id_jogo));
+
+create table fornece(
+id_jogo varchar(20),
+id_fornecedor varchar(20),
+foreign key(id_jogo) references jogo(id_jogo),
+foreign key (id_fornecedor) references fornecedor(id_fornecedor));
+
+create table cliente_paga(
+user_id integer,
+id_pagamento varchar(20),
+foreign key (user_id) references cliente(user_id),
+foreign key (id_pagamento) references loja(id_pagamento));
+
+create table loja_paga(
+id_pagamento varchar(20),
+id_fornecedor varchar(20),
+foreign key (id_pagamento) references loja(id_pagamento),
+foreign key (id_fornecedor) references fornecedor(id_fornecedor));
+
+create table loja_estar(
+id_jogo varchar(20),
+id_pagamento varchar(20),
+foreign key (id_jogo) references jogo(id_jogo),
+foreign key (id_pagamento) references loja(id_pagamento));
+
+
+--inserts
+
+insert into cliente values(12345678,'1337H4X0RZ','zxcv',966990258,4000123456789010);
+insert into cliente values(12345679,'xxILoveCatsxx','qwerty',920007052,1234567898765432);
+insert into cliente values(12345670,'N00bPwnr','1234',912537895,5000001234567899);
+insert into cliente values(12345671,'KappaPride11','abcde',913005999,1234567898765432);
+insert into cliente values(12345672,'Pikajew42', '23456709',967743987,1337043514122689);
+insert into cliente values(12345673,'420NoScope','momlover2',922522829,5412751234123456);
+
+insert into fornecedor values('C552X','5162750000000000','Ubihard');
+insert into fornecedor values('444C','5067260000000000','THK');
+insert into fornecedor values('X96A','4915460123456789','Stonestar');
+insert into fornecedor values('B042','4179880000000000','Banzai Nomco');
+insert into fornecedor values('P224','5150443238827875','Valvo');
+insert into fornecedor values('P90P','4000080706200002','RiotPLS');
+
+insert into jogo values('SS293O','Suite Crush',9.00,'X96A');
+insert into jogo values('7S23L4','Triggered Birds',46.00,'B042');
+insert into jogo values('H0L4RY','Peace of Clans',10.00,'C552X');
+insert into jogo values('D0LL4A','League of Myths',2.00,'P90P');
+insert into jogo values('NO0B41','Not Counter Strike',29.00,'P224');
+insert into jogo values('J0GO79','Full Life 2',28.00,'P224');
+insert into jogo values('O58H57','Triggered Birds',2.00,'B042');
+insert into jogo values('3371HO','Suite Crush',9.00,'X96A');
+
+insert into loja values('001223',9.99,to_date('02102016','DDMMYYYY'),12345679,'SS293O');
+insert into loja values('001395',59.99,to_date('03032013','DDMMYYYY'),12345671,'7S23L4');
+insert into loja values('015541',9.99,to_date('02102016','DDMMYYYY'),12345678,'3371HO');
+insert into loja values('022412',29.99,to_date('05072012','DDMMYYYY'),12345673,'NO0B41');
+insert into loja values('044412',11.99,to_date('11092009','DDMMYYYY'),12345679,'H0L4RY');
+insert into loja values('121233',2.34,to_date('01012011','DDMMYYYY'),12345670,'D0LL4A');
+insert into loja values('910012',28.61,to_date('24122017','DDMMYYYY'),12345670,'J0GO79');
+insert into loja values('933445',59.99,to_date('19022016','DDMMYYYY'),12345671,'O58H57');
+
+insert into quer_jogo values(12345679,'SS293O');
+insert into quer_jogo values(12345671,'7S23L4');
+insert into quer_jogo values(12345678,'3371HO');
+insert into quer_jogo values(12345673,'NO0B41');
+insert into quer_jogo values(12345679,'H0L4RY');
+insert into quer_jogo values(12345670,'D0LL4A');
+insert into quer_jogo values(12345670,'J0GO79');
+insert into quer_jogo values(12345671,'O58H57');
+
+insert into fornece values('SS293O','X96A');
+insert into fornece values('7S23L4','B042');
+insert into fornece values('H0L4RY','C552X');
+insert into fornece values('D0LL4A','P90P');
+insert into fornece values('NO0B41','P224');
+insert into fornece values('J0GO79','P224');
+insert into fornece values('O58H57','B042');
+insert into fornece values('3371HO','X96A');
+
+insert into cliente_paga values(12345679,'001223');
+insert into cliente_paga values(12345671,'001395');
+insert into cliente_paga values(12345678,'015541');
+insert into cliente_paga values(12345673,'022412');
+insert into cliente_paga values(12345679,'044412');
+insert into cliente_paga values(12345670,'121233');
+insert into cliente_paga values(12345670,'910012');
+insert into cliente_paga values(12345671,'933445');
+
+insert into loja_paga values('001223','X96A');
+insert into loja_paga values('001395','B042');
+insert into loja_paga values('015541','X96A');
+insert into loja_paga values('022412','P224');
+insert into loja_paga values('044412','C552X');
+insert into loja_paga values('121233','P90P');
+insert into loja_paga values('910012','P224');
+insert into loja_paga values('933445','B042');
+
+insert into loja_estar values('SS293O','001223');
+insert into loja_estar values('7S23L4','001395');
+insert into loja_estar values('3371HO','015541');
+insert into loja_estar values('NO0B41','022412');
+insert into loja_estar values('H0L4RY','044412');
+insert into loja_estar values('D0LL4A','121233');
+insert into loja_estar values('J0GO79','910012');
+insert into loja_estar values('O58H57','933445');
+
+
+
+

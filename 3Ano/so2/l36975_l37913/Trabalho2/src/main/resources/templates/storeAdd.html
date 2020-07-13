@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Criacao de Lojas</title>
+	<link th:href = "@{/css/gray.css}" rel="stylesheet">
+</head>
+<body>
+	<div align="center">
+		<h1>Adicionar loja</h1>
+		<form action="#" th:action="@{/createStore}" th:object="${store}" method="post">
+			<label>Nome da loja:</label>
+			<input type="text" th:field="*{storeName}"/><br/>
+			<label>Latitude:</label>
+			<input type="number" step="0.000001" th:field="*{latitude}"/><br/>
+			<label>longitude:</label>
+			<input type="number" step="0.000001" th:field="*{longitude}"/><br/>
+			<button type="submit">Submit</button>
+			
+		</form>
+		<h3 id="id" th:text="${username}"></h3>
+		<a href="/menuAdmin" >Voltar ao menu</a>
+		<form method="post" th:action="@{/logout}">
+			<button class="logout" type="submit">logout</button>
+		</form>
+	</div>
+</body>
+</html>

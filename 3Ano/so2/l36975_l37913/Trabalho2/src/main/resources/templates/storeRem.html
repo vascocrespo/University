@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Remocao de uma loja</title>
+	<link th:href = "@{/css/gray.css}" rel="stylesheet">
+</head>
+<body>
+	<h1 align="center">Remover loja</h1>
+	<table align="center">
+		<tr>
+			<th>Lojas existentes</th>
+		</tr>
+			<tr th:each="store : ${stores}">
+					<td th:text="${store.storeName}">storeName</td>
+			</tr>
+	</table>
+	<br>
+	<div align="center">
+		
+		<form action="#" th:action="@{/remStore}" method="post">
+			<label>Nome da loja:</label>
+			<input type="text" th:name="storeName" name="storeName"/><br/>
+			<button type="submit">Submit</button>
+			
+		</form>
+		
+		<h3 id="id" th:text="${username}"></h3>
+		<a href="/menuAdmin" >Voltar ao menu</a>
+		<form method="post" th:action="@{/logout}">
+			<button class="logout" type="submit">logout</button>
+		</form>
+		
+	</div>
+</body>
+</html>

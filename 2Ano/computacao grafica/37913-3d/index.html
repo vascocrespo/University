@@ -1,0 +1,218 @@
+<html> 
+       <head>
+          <meta charset="utf-8">
+          <title>Grande Arche de La Défense</title>
+          <script type='text/javascript' src='https://x3dom.org/download/dev/x3dom-full.js'></script>
+          <link rel='stylesheet' type='text/css' href='../lib/x3dom.css'/>
+          <style type = "text/css">
+            th {
+                padding: 1em;
+                background-color:white;
+                color:black;
+            }
+            td {
+                padding: 0.5em;
+                background-color: white;
+                width: 50%;
+                text-align: center;
+            }
+            table {
+                width:100%;
+            }
+            h1,h2, h5 {
+                text-align: center;
+            }
+            h3,h4{
+              text-align: justify;
+            }
+            </style>
+        </head>
+        <body>
+            <h1>Trabalho X3D, Aluno nº 37913 </h1>
+            <table>
+                <tr>
+                    <th><span style="font-family: arial;">Original</span></th>
+                    
+                </tr>
+                <tr>
+                <td><img src="./media./la-grande-arche-de-la.png" width="700px" height="500px">
+                </img>
+                </td>
+                <td>
+                  <x3d width="600px" height="600px" class="background">
+                      <scene>
+                             <switch whichCoice = "-1">
+                              <cylinder def = "rod"
+                                  radius = "0.05"
+                                  height = "5.0" >
+                              </cylinder>
+                              <cone def = "cap"
+                                  bottomRadius = "0.10"
+                                  height = "0.2" >
+                              </cone>
+                          </switch>
+                
+                </td>
+                        </scene>
+                    </x3d>
+                </td>
+            </tr>
+            </table>
+
+        <h2><span style="font-family: arial;"> <b> Grande Arche de La Défense</b></span></h2>
+        <h3> <span style="font-family: arial;"><b>Descrição</b> </span> </h3>
+        <h4><span style="font-family: arial;"><p style="line-height: 1.5">O Grande Arco de La Défense  é um monumento, construido em 1989, situado no bairro de La Défense(na periferia oeste da aglomeração parisiense). <br> Informação consultada em https://pt.wikipedia.org/wiki/Grande_Arco_de_la_D%C3%A9fense , 24/06/2018</p></span></h4>
+        <h5><span style="font-family: arial;">Engenharia Informática, Computação Gráfica &mdash; 
+        2015-2016</span></h5>
+
+            <x3d 
+                width='600px' 
+                height='600px'
+                class ="background">
+
+            <scene> 
+                <background
+                    backUrl ="./media./anotherone.png"
+
+                    >
+                </background>
+                <switch whichCoice = "1">
+                    
+                    <extrusion id = "cimas"
+                        convex = "false"
+                        crossSection = "
+                            1 -1
+                            1 1
+                            -1 1
+                            -1 -1
+                            1 -1
+                            
+                            "
+
+                        spine = "
+                            0 0.5 0
+                            0 1 0
+                            "
+
+                        scale = "
+                            1 1
+                            .9 0.7
+                            ">
+
+
+
+                    </extrusion>
+
+                    <extrusion id = "lados"
+                        convex = "false"
+                        crossSection = "
+                            1 -1
+                            1 1
+                            -1 1
+                            -1 -1
+                            1 -1
+                            
+                            "
+
+                        spine = "
+                            0 0.6 0
+                            0 1 0
+                            "
+
+                        scale = "
+                            1 1
+                            .8 .7
+                            ">
+
+
+
+                    </extrusion>
+
+                    
+                
+
+                </switch>
+         
+              
+                    <transform translation="0 2 0" scale= "2 1 1" rotation ="100 0 0 3.3">
+                            <shape>
+                                <appearance>
+                                    <commonSurfaceShader specularFactor='50 50 50'>
+                                        <imageTexture
+                                        containerField = "diffuseTexture"
+                                        url = "./media/0001.png">
+                                    </imageTexture>
+                                        <imageTexture
+                                        containerField = "specularTexture"
+                                        url="./media/800px_COLOURBOX26751723.png">
+                                        </imageTexture>
+
+                                    </commonSurfaceShader> 
+                                    <twosidedmaterial difuseColor= "black"></twosidedmaterial>
+                                </appearance> 
+                                <x3dgeometrynode use="cimas"></x3dgeometrynode>
+                            </shape>
+                    </transform> 
+
+                   <transform translation="-2.6 -0.49 -0.4" scale= "2 1 1" rotation ="-195 -150 2300 4.7">
+                            <shape>
+                                <appearance> 
+                                    <commonSurfaceShader>
+                                        <imageTexture
+                                        containerField = "diffuseTexture"
+                                        url = "./media/0001.png">
+                                    </imageTexture>
+                                        <imageTexture
+                                        containerField = "specularTexture"
+                                        url="./media/800px_COLOURBOX26751723.png">
+                                        </imageTexture>
+                                    </commonSurfaceShader> 
+                                    <twosidedmaterial difuseColor= "black"></twosidedmaterial>
+                                </appearance> 
+                                <x3dgeometrynode use="lados"></x3dgeometrynode>
+                            </shape>
+                    </transform>      
+
+                    <transform translation="-0.03 -3.0 -0.75" scale= "2 1 1" rotation ="100 -00 0 0.13">
+                            <shape>
+                                <appearance>
+                                    <commonSurfaceShader>
+                                        <imageTexture
+                                        containerField = "diffuseTexture"
+                                        url = "./media/0001.png">
+                                    </imageTexture>
+                                        <imageTexture
+                                        containerField = "specularTexture"
+                                        url="./media/800px_COLOURBOX26751723.png">
+                                        </imageTexture>
+                                    </commonSurfaceShader>  
+                                    <twosidedmaterial difuseColor= "black"></twosidedmaterial>
+                                </appearance> 
+                                <x3dgeometrynode use="cimas"></x3dgeometrynode>
+                            </shape>
+                    </transform>
+
+
+                    <transform translation="2.59 -0.51 -0.41" scale= "2 1 1" rotation ="200 -220 2500 1.57">
+                            <shape>
+                                <appearance> 
+                                    <commonSurfaceShader>
+                                        <imageTexture
+                                        containerField = "diffuseTexture"
+                                        url = "./media/0001.png">
+                                    </imageTexture>
+                                        <imageTexture
+                                        containerField = "specularTexture"
+                                        url="./media/800px_COLOURBOX26751723.png">
+                                        </imageTexture>
+                                    </commonSurfaceShader> 
+                                    <twosidedmaterial difuseColor= "black"></twosidedmaterial>
+                                </appearance> 
+                                <x3dgeometrynode use="lados"></x3dgeometrynode>
+                            </shape>
+                    </transform> 
+
+          </scene> 
+        </x3d> 
+    </body> 
+</html> 

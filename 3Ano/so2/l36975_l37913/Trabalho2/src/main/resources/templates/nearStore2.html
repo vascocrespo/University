@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<link th:href = "@{/css/gray.css}" rel="stylesheet">
+
+	<title>Loja Perto de Si</title>
+</head>
+<body>
+	<h1 align="center">Loja Mais Perto de Si</h1>
+	<br>
+	<table align="center">
+		<tr>
+			<th>Niveis de Ocupacao</th>
+		</tr>
+			<tr th:each="theOneStore : ${theOneStore}">
+				<td>
+				<h2
+					th:text="${theOneStore.storeName}">Loja: </h2>
+				</td>
+			</tr>
+	</table>
+	<a href="/menu" >Voltar ao menu</a>
+</body>
+</html>

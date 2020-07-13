@@ -1,0 +1,69 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 3;
+	padding: 0;
+	text-decoration: none;
+}
+
+#title {
+	position:fixed;
+	left: 43%;
+	top: 4px;
+}
+
+body {
+ 	background-image: url("https://lisboasecreta.co/wp-content/uploads/2020/05/kit-suman-urQXMoQ2hk4-unsplash.jpg");
+ 	background-repeat: no-repeat, repeat;
+ 	background-size: cover;
+	background-color: #cccccc;
+}
+
+div {
+	width: 100%;
+	height: 80px;
+	background-color: #5394ac;
+	outline: 1px solid black;
+	line-height: 50px;
+	
+}
+
+nav {
+	width: 100%;
+	height: 100px;
+	background-color: #fff;
+	outline: 1px solid black;
+}
+
+ul {
+	text-align:center;
+}
+
+ul li {
+	list-style: none;
+	display: inline-block;
+	line-height: 100px;
+	
+}
+
+ul li a {
+	display: block;
+	font-size: 14px;
+	font-family: arial;
+	color: #1e1e1e;
+	padding: 0 20px;
+}
+
+#id {
+	position:fixed;
+    right:10px;
+    top:-5px;		
+}
+
+
+.logout{
+
+   position:fixed;
+   right:10px;
+   top:35px;
+}

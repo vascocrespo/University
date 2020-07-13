@@ -1,0 +1,59 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 3;
+	padding: 0;
+	text-decoration: none;
+	line-height:1.8;
+}
+
+
+body {
+    background-color: rgb(210, 213, 213);
+}
+
+#id {
+	position:fixed;
+    right:10px;
+    top:-15px;		
+}
+
+td {
+	text-align:center;  
+}
+
+
+.logout{
+
+    position:fixed;
+    right:10px;
+    top:35px;
+}
+
+#rest {
+	position: fixed;
+	left: 780px;
+	top: 185px;
+}
+
+#form {
+	position: fixed;
+	left: 690px;
+	top: 110px;
+}
+
+#login {
+	position: fixed;
+	left: 740px;
+	top: 230px;
+}
+
+#mapid { 
+		height: 400px;
+		width: 800px;
+		position: absolute;
+		left: 500px;
+		top: 100px;
+		
+}
+

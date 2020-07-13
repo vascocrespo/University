@@ -1,0 +1,60 @@
+Relatório de Redes de Computadores
+
+Sistema cliente/servidor com redundância e segurança
+
+Trabalho realizado por:
+-Diogo Rafael nº 37859
+-Vasco Crespo nº 37913
+
+Docente :
+Pedro Patinhos
+
+
+Introdução : 
+Neste trabalho pretende-se desenvolver um sistema cliente/servidor para gestão de pares chave/valor ao estilo do DNS. 
+O servidor será responsável por gerir os dados, enquanto que os clientes terão acesso a esse servidor podendo alterar todos os seus valores.
+Este sistema será uma espécie de lista telefónica em que terá "clientes" e "números de telefone" a eles associados.
+
+
+Sistema Base a Implementar:
+
+Autenticação:
+Para se entrar no servidor será preciso uma autenticação, ou seja um nome de utilizador e uma palavra-passe. 
+Os diferentes utilizadores, após serem criados, serão guardados num ficheiro de forma a que, da próxima vez que o utilizador quiser aceder ao servidor apenas necessita de introduzir o seu 
+username e palavra-passe e haverá uma confirmação se esse utilizador já está registado no servidor ou não. Caso o utilizar queira mudar de utilizador, este terá de introduzir o username e 
+a palavra-passe do utilizador anterior.
+
+Após a entrada no servidor, o utilizador poderá:
+
+-Adicionar um novo cliente (setNumber(s, nome, numero))
+	$getphone -set (nome em string) (numero em int)
+	Nesta função o utilizador dará input do nome e do número do cliente e o programa irá distinguir o que é a string correnspondente ao nome e o que é o inteiro que corresponde 
+	ao numero do cliente e irá enviar a informação do cliente novo ao servidor. Caso esse nome já se encontre nos registos do servidor, este indicará ao utilizador que esse nome já se
+	encntra nos registos.
+
+-Verificar os numeros de um certo cliente (getNumber(s, nome))
+	$getphone (nome em string)
+	Nesta função o programa vai verificar com o servidor se o nome do cliente inserido como input já existe. Se receber uma respota negativa significa que o nome inserido não existe ainda
+	no servidor e enviará dizer ao utilizador que esse nome não foi encontrado nos registos. Caso encontre esse nome no servidor irá retornar ao utilizador todos os números previamente 
+	associados a esse nome.
+
+-Verificar o nome associado (reverse(s, numero))
+	$getphone (numero em int)
+	Função inversa à função anterior mas neste caso vai procurar o nome do cliente no servidor a partir do input do seu numero associado. Caso o número não exista no servidor, o utilizador 
+	recbeá a mensagem de que esse número não existe.
+
+-Remover um número associado a um certo cliente (removeNumber(s, numero, nome)):
+	$getphone -del (numero em int)
+	Esta função vai comparar o input do numero recebido com todos os números existentes no servidor e caso o encontre vai removê-lo e enviar a mensagem que o número foi removido com sucesso.
+
+-Remover um cliente e os seus números (removeClient(s, nome)):
+	$getphone -del (nome em string)
+	Esta função recebe como input o nome do cliente que o utilizador quer remover do servidor e vai procurar no servidor esse nome para de seguida removê-lo do servidor tal como os números
+	associados a esse cliente.
+
+
+Conclusão:
+
+Neste trabalho implementámos o sistema base e a autenticação sendo que tivemos algumas dificuldades na implementação das outras partes pelo que decidimos não enviá-las.
+
+

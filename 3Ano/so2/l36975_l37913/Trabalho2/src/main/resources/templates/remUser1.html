@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Remover utilizador</title>
+	<link th:href = "@{/css/remUser.css}" rel="stylesheet">
+</head>
+<body>
+	<h1 align="center">Todos os utilizadores</h1>
+	<table align="center">
+		<tr>
+			<th>Usernames</th>
+		</tr>
+			<tr th:each="user : ${users}">
+					<td th:text="${user.username}">username</td>
+			</tr>
+	</table>
+	
+	<form id="rest" action="#" th:action="@{/remUser}" method="post">
+		<label>Nome da utilizador:</label>
+		<input type="text" th:name="userToRemove" name="userToRemove"/><br/>
+		<button id="rest2" type="submit">Submit</button>
+	</form>
+	
+	<h3 id="id" th:text="${username}"></h3>
+	<a id="login" href="/menuAdmin" >Voltar ao menu</a>
+	<form method="post" th:action="@{/logout}">
+		<button class="logout" type="submit">logout</button>
+	</form>
+
+</body>
+</html>

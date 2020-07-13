@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Grau de ocupacao de uma loja</title>
+<link th:href = "@{/css/getOcupation1.css}" rel="stylesheet">
+</head>
+<body>
+	<h1 align="center">Grau de Ocupacao</h1>
+	<br>
+	<table align="center">
+		<tr>
+			<th>Graus de Ocupacao recentes</th>
+		</tr>
+			<tr align="center" th:each="grausOcupacao : ${grausOcupacao}">
+				<td>
+				<h2
+					th:text="|${grausOcupacao}|">Ocupacao: </h2>
+				</td>
+			</tr>
+	</table>
+	<a href="/menu" >Voltar ao menu</a>
+</body>
+</html>
