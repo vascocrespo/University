@@ -1,0 +1,9 @@
+No ficheiro Connect.java temos de alterar a base de dados e a sua configuracao para nos conectarmos a nossa base de dados local
+
+#Estando na pasta so2-t01-36975-37913
+
+#Servidor
+java -classpath trabalho2020/build/classes:postgresql.jar Server 9000
+
+#Cliente
+java -classpath trabalho2020/build/classes:postgresql.jar Cliente localhost 9000
