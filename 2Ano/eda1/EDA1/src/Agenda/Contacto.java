@@ -3,9 +3,7 @@ package Agenda;
 import EDA1.DoubleLinkedList;
 import EDA1.LinkedList;
 
-/**
- * Created by DanielSerrano on 29/12/2017.
- */
+
 public class Contacto implements Comparable<Contacto>{
     private String nome;
     private DoubleLinkedList<Integer> numero;
