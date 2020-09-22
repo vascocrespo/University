@@ -5,9 +5,7 @@ import EDA1.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- * Created by DanielSerrano on 25/12/2017.
- */
+
 public class Main {
     Scanner scan = new Scanner(System.in);
 
