@@ -3,9 +3,6 @@ package Agenda;
 import EDA1.*;
 
 
-/**
- * Created by DanielSerrano on 12/01/2018.
- */
 public class Agenda{
     ArvVL<Contacto> agendaAvl;
 
