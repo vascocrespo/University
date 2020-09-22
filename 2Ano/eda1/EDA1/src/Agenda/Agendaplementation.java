@@ -4,9 +4,7 @@ import EDA1.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- * Created by DanielSerrano on 28/12/2017.
- */
+
 public class Agendaplementation {
     Agenda agenda = new Agenda();
 
